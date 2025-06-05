@@ -75,96 +75,103 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>MVA Lead Submission</h1>
-        <form method="post">
-            <label>First Name</label>
-            <input type="text" name="first_name" required>
+<div class="container">
+    <h1>MVA Lead Submission</h1>
+    <form method="post">
+        <label>First Name</label>
+        <input type="text" name="first_name" required>
 
-            <label>Last Name</label>
-            <input type="text" name="last_name" required>
+        <label>Last Name</label>
+        <input type="text" name="last_name" required>
 
-            <label>Email</label>
-            <input type="email" name="email" required>
+        <label>Email</label>
+        <input type="email" name="email" required>
 
-            <label>Phone</label>
-            <input type="tel" name="phone" required>
+        <label>Phone</label>
+        <input type="tel" name="phone" required>
 
-            <label>Zip Code</label>
-            <input type="text" name="zip_code" required>
+        <label>Zip Code</label>
+        <input type="text" name="zip_code" required>
 
-            <label>Incident Date</label>
-            <input type="date" name="incident_date" required>
+        <label>Incident Date</label>
+        <input type="date" name="incident_date" required>
 
-            <label>Doctor Treatment</label>
-            <select name="doctor_treatment" required>
-                <option value="">-- Select --</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-            </select>
+        <label>Doctor Treatment</label>
+        <select name="doctor_treatment" required>
+            <option value="">-- Select --</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
 
-            <label>Were You At Fault?</label>
-            <select name="were_you_at_fault" required>
-                <option value="">-- Select --</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-            </select>
+        <label>Were You At Fault?</label>
+        <select name="were_you_at_fault" required>
+            <option value="">-- Select --</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
 
-            <label>Currently Represented?</label>
-            <select name="currently_represented" required>
-                <option value="">-- Select --</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-            </select>
+        <label>Currently Represented?</label>
+        <select name="currently_represented" required>
+            <option value="">-- Select --</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
 
-            <label>MVA Accident Type</label>
-            <select name="mva_accident_type" required>
-                <option value="">-- Select --</option>
-                <option value="Auto Accident">Auto Accident</option>
-                <option value="Commercial Vehicle Accident">Commercial Vehicle Accident</option>
-                <option value="Motorcycle Accident">Motorcycle Accident</option>
-                <option value="Pedestrian Accident">Pedestrian Accident</option>
-                <option value="Public Transportation Accident">Public Transportation Accident</option>
-                <option value="Truck Accident">Truck Accident</option>
-            </select>
+        <label>Physically Injured?</label>
+        <select name="physically_injured" required>
+            <option value="">-- Select --</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
 
-            <label>Primary Injury</label>
-            <select name="primary_injury" required>
-                <option value="">-- Select --</option>
-                <option value="Anxiety">Anxiety</option>
-                <option value="Back or Neck Pain">Back or Neck Pain</option>
-                <option value="Broken Bones">Broken Bones</option>
-                <option value="Cuts and Bruises">Cuts and Bruises</option>
-                <option value="Headaches">Headaches</option>
-                <option value="Loss of Limb">Loss of Limb</option>
-                <option value="Memory Loss">Memory Loss</option>
-                <option value="Other">Other</option>
-            </select>
+        <label>MVA Accident Type</label>
+        <select name="mva_accident_type" required>
+            <option value="">-- Select --</option>
+            <option value="Auto Accident">Auto Accident</option>
+            <option value="Commercial Vehicle Accident">Commercial Vehicle Accident</option>
+            <option value="Motorcycle Accident">Motorcycle Accident</option>
+            <option value="Pedestrian Accident">Pedestrian Accident</option>
+            <option value="Public Transportation Accident">Public Transportation Accident</option>
+            <option value="Truck Accident">Truck Accident</option>
+        </select>
 
-            <label>General Description</label>
-            <textarea name="description" required></textarea>
+        <label>Primary Injury</label>
+        <select name="primary_injury" required>
+            <option value="">-- Select --</option>
+            <option value="Anxiety">Anxiety</option>
+            <option value="Back or Neck Pain">Back or Neck Pain</option>
+            <option value="Broken Bones">Broken Bones</option>
+            <option value="Cuts and Bruises">Cuts and Bruises</option>
+            <option value="Headaches">Headaches</option>
+            <option value="Loss of Limb">Loss of Limb</option>
+            <option value="Memory Loss">Memory Loss</option>
+            <option value="Other">Other</option>
+        </select>
 
-            <label>Landing Page URL</label>
-            <input type="url" name="landing_page_url" required>
+        <label>General Description</label>
+        <textarea name="description" required></textarea>
 
-            <label>TCPA Language</label>
-            <textarea name="tcpa_language" required></textarea>
+        <label>Landing Page URL</label>
+        <input type="url" name="landing_page_url" required>
 
-            <label>LP_S1</label>
-            <input type="text" name="lp_s1" required>
+        <label>TCPA Language</label>
+        <textarea name="tcpa_language" required></textarea>
 
-            <label>Trusted Form Cert URL</label>
-            <input type="url" name="trusted_form" required>
+        <label>LP_S1</label>
+        <input type="text" name="lp_s1" required>
 
-            <button type="submit">Submit Lead</button>
-        </form>
+        <label>Trusted Form Cert URL</label>
+        <input type="url" name="trusted_form" required>
 
-        {% if response_message %}
-            <div class="response-box">
-                <strong>Server Response:</strong>
-                <br><br>{{ response_message }}
-            </div>
-        {% endif %}
-    </div>
+        <button type="submit">Submit Lead</button>
+    </form>
+
+    {% if response_message %}
+        <div class="response-box">
+            <strong>Server Response:</strong>
+            <br><br>{{ response_message }}
+        </div>
+    {% endif %}
+</div>
 </body>
 </html>
