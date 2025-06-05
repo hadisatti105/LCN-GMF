@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import requests
 import json
 import os
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -19,10 +20,17 @@ def index():
         ip_address = request.remote_addr
         user_agent = request.headers.get('User-Agent')
 
+        # Format incident date to mm/dd/yyyy
+        try:
+            incident_date_raw = request.form.get("incident_date")
+            incident_date = datetime.strptime(incident_date_raw, "%Y-%m-%d").strftime("%m/%d/%Y")
+        except Exception:
+            incident_date = ""
+
         # Shared fields for both ping & post
         common_data = {
             "zip_code": request.form.get("zip_code"),
-            "incident_date": request.form.get("incident_date"),
+            "incident_date": incident_date,
             "doctor_treatment": request.form.get("doctor_treatment"),
             "were_you_at_fault": request.form.get("were_you_at_fault"),
             "currently_represented": request.form.get("currently_represented"),
