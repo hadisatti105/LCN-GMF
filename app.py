@@ -18,7 +18,8 @@ def index():
 
     if request.method == 'POST':
         # Use real IP address when behind proxy (Render)
-        ip_address = request.headers.get('X-Forwarded-For', request.remote_addr)
+        ip_header = request.headers.get('X-Forwarded-For', request.remote_addr)
+        ip_address = ip_header.split(',')[0].strip() if ip_header else request.remote_addr
         user_agent = request.headers.get('User-Agent')
 
         # Format incident date to mm/dd/yyyy
