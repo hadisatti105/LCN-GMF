@@ -17,7 +17,8 @@ def index():
     response_message = None
 
     if request.method == 'POST':
-        ip_address = request.remote_addr
+        # Use real IP address when behind proxy (Render)
+        ip_address = request.headers.get('X-Forwarded-For', request.remote_addr)
         user_agent = request.headers.get('User-Agent')
 
         # Format incident date to mm/dd/yyyy
@@ -41,7 +42,7 @@ def index():
             "landing_page_url": request.form.get("landing_page_url"),
             "tcpa_language": request.form.get("tcpa_language"),
             "lp_s1": request.form.get("lp_s1"),
-            "trusted_form_cert_id": request.form.get("trusted_form"),
+            "trusted_form_cert_id": request.form.get("trusted_form_cert_id"),
             "ip_address": ip_address,
             "user_agent": user_agent
         }

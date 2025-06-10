@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>MVA Lead Submission Form</title>
+    <script type="text/javascript" src="https://api.trustedform.com/trustedform.js?field=trusted_form_cert_id"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -148,7 +149,7 @@
             <option value="Other">Other</option>
         </select>
 
-        <label>General Description <small>(use first-person: "I was hit...")</small></label>
+        <label>General Description <small>(first-person: "I was hit...")</small></label>
         <textarea name="description" placeholder="Describe what happened to you..." required></textarea>
 
         <label>Landing Page URL</label>
@@ -157,11 +158,10 @@
         <label>TCPA Language</label>
         <textarea name="tcpa_language" required></textarea>
 
-        <label>LP_S1 (Tracking ID)</label>
-        <input type="text" name="lp_s1" required>
+        <label>LP_S1 (Traffic Source / Campaign ID)</label>
+        <input type="text" name="lp_s1" placeholder="ex: google_ads1" required>
 
-        <label>Trusted Form Cert URL</label>
-        <input type="url" name="trusted_form" required>
+        <input type="hidden" name="trusted_form_cert_id" id="trusted_form_cert_id">
 
         <button type="submit">Submit Lead</button>
     </form>
